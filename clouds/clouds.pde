@@ -10,10 +10,10 @@ void setup() {
   
   fill(60,123,236);
   rect (0,0, width/4, height);  
-  rect (width/4, 0, width/2, height);  
+  rect (width/4, 0, width/2, height);
+  rect (3*(width/4) , 0, width, height);
   
-  frameRate(25);
-
+ frameRate(25);
 
 }
 
@@ -22,10 +22,15 @@ void draw() {
   // Optional: adjust noise detail here
    //noiseDetail(3,0.65f);
 
-  drawClouds(width/4, 0, width/2, height, random(0.01, 0.05), false);
-  delay(800);
+
+  drawClouds(width/4, 0, width/2, height, random(0.01), false);
+  delay(250);
+
+
+  //drawClouds(width/4, 0, width/2, height, random(0.01, 0.05), false);
+  //delay(800);
   drawClouds(width/2, 0, 3*(width/4), height,  random (0.01), true);
-  //delay(25);
+  delay(250);
 
 }
 
@@ -56,9 +61,9 @@ void drawClouds(int initX, int initY, int endX, int endY, float increment, boole
       }else{
         
         if(bright <= 100){
-          pixels[x+y*width] = color(random(54,64),random(115,125), random(220,236), 200);
+          pixels[x+y*width] = color(random(50,64),random(100,125), random(220,236), 220);
         }else{
-          pixels[x+y*width] = color(bright+100, 250);
+          pixels[x+y*width] = color(bright+120, 250);
         }
         
       } 

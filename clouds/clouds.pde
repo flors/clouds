@@ -24,7 +24,7 @@ void draw() {
 
   drawClouds(width/4, 0, width/2, height, random(0.01, 0.05), false);
   delay(800);
-  drawClouds(width/2, 0, 3*(width/4), height,  0.01, true);
+  drawClouds(width/2, 0, 3*(width/4), height,  random (0.01), true);
   //delay(25);
 
 }
@@ -55,11 +55,12 @@ void drawClouds(int initX, int initY, int endX, int endY, float increment, boole
         pixels[x+y*width] = color(bright,100,236);
       }else{
         
-        if(bright > 180){
-          pixels[x+y*width] = color(random(250,255));
+        if(bright <= 100){
+          pixels[x+y*width] = color(random(54,64),random(115,125), random(220,236), 200);
         }else{
-          pixels[x+y*width] = color(60,123,236, random(220,255));
+          pixels[x+y*width] = color(bright+100, 250);
         }
+        
       } 
 
     }
